@@ -6,11 +6,13 @@ public class CharacterController2D : MonoBehaviour
     [Range(0, .3f)] [SerializeField] float movementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] bool airControl = false;                         // Whether or not a player can steer while jumping;
     [SerializeField] LayerMask whatIsGround;                          // A mask determining what is ground to the character
+    [SerializeField] LayerMask whatIsCube;
     [SerializeField] Transform groundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] Transform ceilingCheck;                          // A position marking where to check for ceilings
 
     const float groundedRadius = 0.2f; // Radius of the overlap circle to determine if grounded
     bool grounded;            // Whether or not the player is grounded.
+    bool activeCube;
     const float ceilingRadius = 0.2f; // Radius of the overlap circle to determine if the player can stand up
     Rigidbody2D rb2D;
     bool facingRight = true;  // For determining which way the player is currently facing.
@@ -36,30 +38,31 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //bool wasGrounded = grounded;
-        //grounded = false;
-
-        ////CORREGIR POR POSIBLE ESFUERZO EXTRA
-        //Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
-        //for (int i = 0; i < colliders.Length; i++)
-        //{
-        //    if (colliders[i].gameObject != gameObject)
-        //    {
-        //        grounded = true;
-        //        if (!wasGrounded)
-        //            OnLandEvent.Invoke();
-        //    }
-        //}
-        bool left = Physics2D.Raycast(new Vector2(groundCheck.position.x-0.2f,groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
+        Debug.DrawRay(new Vector2(groundCheck.position.x - 0.07f, groundCheck.position.y), -Vector2.up);
+        bool left = Physics2D.Raycast(new Vector2(groundCheck.position.x - 0.07f,groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
         bool center = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.2f, whatIsGround);
-        bool right = Physics2D.Raycast(new Vector2(groundCheck.position.x + 0.2f, groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
+        bool right = Physics2D.Raycast(new Vector2(groundCheck.position.x + 0.07f, groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
+
         if (left||center||right)
         {
             grounded = true;
+            activeCube = false;
         }
         else
         {
             grounded = false;
+        }
+        if (!grounded)
+        {
+
+            RaycastHit2D hit = Physics2D.Raycast(ceilingCheck.position, Vector2.up, 0.2f, whatIsCube);
+            if (hit.collider != null && !activeCube)
+            {
+                activeCube = true;
+                Debug.Log(hit.collider.name);
+                GameObject cubePush = hit.collider.gameObject;
+                cubePush.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
         }
     }
 
