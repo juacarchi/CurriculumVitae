@@ -13,8 +13,8 @@ public class CharacterController2D : MonoBehaviour
     bool grounded;            // Whether or not the player is grounded.
     const float ceilingRadius = 0.2f; // Radius of the overlap circle to determine if the player can stand up
     Rigidbody2D rb2D;
-    bool m_FacingRight = true;  // For determining which way the player is currently facing.
-    Vector3 m_Velocity = Vector3.zero;
+    bool facingRight = true;  // For determining which way the player is currently facing.
+    Vector3 velocity = Vector3.zero;
 
     [Header("Events")]
     [Space]
@@ -36,19 +36,30 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        bool wasGrounded = grounded;
-        grounded = false;
+        //bool wasGrounded = grounded;
+        //grounded = false;
 
-        //CORREGIR POR POSIBLE ESFUERZO EXTRA
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
-        for (int i = 0; i < colliders.Length; i++)
+        ////CORREGIR POR POSIBLE ESFUERZO EXTRA
+        //Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
+        //for (int i = 0; i < colliders.Length; i++)
+        //{
+        //    if (colliders[i].gameObject != gameObject)
+        //    {
+        //        grounded = true;
+        //        if (!wasGrounded)
+        //            OnLandEvent.Invoke();
+        //    }
+        //}
+        bool left = Physics2D.Raycast(new Vector2(groundCheck.position.x-0.2f,groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
+        bool center = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.2f, whatIsGround);
+        bool right = Physics2D.Raycast(new Vector2(groundCheck.position.x + 0.2f, groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
+        if (left||center||right)
         {
-            if (colliders[i].gameObject != gameObject)
-            {
-                grounded = true;
-                if (!wasGrounded)
-                    OnLandEvent.Invoke();
-            }
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
         }
     }
 
@@ -62,18 +73,16 @@ public class CharacterController2D : MonoBehaviour
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
             // And then smoothing it out and applying it to the character
-            rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, targetVelocity, ref m_Velocity, movementSmoothing);
+            rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-            // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !m_FacingRight)
+            //Flip Player
+            if (move > 0 && !facingRight)
             {
-                // ... flip the player.
                 Flip();
             }
-            // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && m_FacingRight)
+            else if (move < 0 && facingRight)
             {
-                // ... flip the player.
+                
                 Flip();
             }
         }
@@ -89,10 +98,8 @@ public class CharacterController2D : MonoBehaviour
 
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
-        m_FacingRight = !m_FacingRight;
+        facingRight = !facingRight;
 
-        // Multiply the player's x local scale by -1.
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
