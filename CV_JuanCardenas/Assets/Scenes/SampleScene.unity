@@ -224,7 +224,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7818182, y: 1}
+    m_SensorSize: {x: 1.7779887, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -241,7 +241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143291505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.050603587, y: -0.056799985, z: -10}
+  m_LocalPosition: {x: -0.050494827, y: -0.056799985, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 717162419}
@@ -376,7 +376,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.5235849, g: 0.9722517, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -417,7 +417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.050603587, y: -0.056799985, z: -10}
+  m_LocalPosition: {x: -0.050494827, y: -0.056799985, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1321,6 +1321,7 @@ GameObject:
   - component: {fileID: 2119157580}
   - component: {fileID: 2119157579}
   - component: {fileID: 2119157577}
+  - component: {fileID: 2119157578}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -1367,10 +1368,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4366178942990776957, guid: 5a448cc07b6e09343924bf933b0cb70e,
+  m_Sprite: {fileID: -7195447411970327380, guid: 190d6f9cf27d0184883dcbfd775e1d97,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -1437,6 +1438,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0025620684, y: -0.013450831}
   m_Size: {x: 0.15137418, y: 0.20902035}
   m_Direction: 0
+--- !u!95 &2119157578
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119157573}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2536556cdfefbff4d9c097dc20ab39c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &2119157579
 Rigidbody2D:
   serializedVersion: 4
@@ -1472,4 +1492,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2119157576}
   rigidBody2D: {fileID: 2119157579}
-  runSpeed: 8
+  runSpeed: 6
