@@ -63,7 +63,7 @@ public class CharacterController2D : MonoBehaviour
                 activeCube = true;
                 Debug.Log(hit.collider.name);
                 GameObject cubePush = hit.collider.gameObject;
-                cubePush.GetComponent<SpriteRenderer>().color = Color.blue;
+                cubePush.GetComponent<DisplayInfo>().ShowMessage();
             }
         }
         
