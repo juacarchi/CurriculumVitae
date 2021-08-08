@@ -10,8 +10,10 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] Transform groundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] Transform ceilingCheck;                          // A position marking where to check for ceilings
 
+    Animator animPlayer;
     const float groundedRadius = 0.2f; // Radius of the overlap circle to determine if grounded
-    bool grounded;            // Whether or not the player is grounded.
+    bool grounded;  // Whether or not the player is grounded.
+    bool isJumping;
     bool activeCube;
     const float ceilingRadius = 0.2f; // Radius of the overlap circle to determine if the player can stand up
     Rigidbody2D rb2D;
@@ -30,7 +32,7 @@ public class CharacterController2D : MonoBehaviour
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
-
+        animPlayer=this.GetComponent<Animator>();
         //Crear evento de aterrizaje (nos ayudará a la hora de sincronizar la animación)
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
@@ -54,7 +56,7 @@ public class CharacterController2D : MonoBehaviour
         }
         if (!grounded)
         {
-
+            animPlayer.SetBool("isGrounded", false);
             RaycastHit2D hit = Physics2D.Raycast(ceilingCheck.position, Vector2.up, 0.2f, whatIsCube);
             if (hit.collider != null && !activeCube)
             {
@@ -64,15 +66,41 @@ public class CharacterController2D : MonoBehaviour
                 cubePush.GetComponent<SpriteRenderer>().color = Color.blue;
             }
         }
-    }
+        
+        if (!grounded && rb2D.velocity.y < 0)
+        {
+            Debug.Log("Esta cayendo");
+            bool checkFloor = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.3f, whatIsGround);
+            if (checkFloor)
+            {
+                animPlayer.SetBool("isGrounded", true);
+            }
+        }
 
+        if (grounded)
+        {
+            if(rb2D.velocity.y == 0)
+            {
+                animPlayer.SetBool("isGrounded", true);
+            }
+        }
+    }
+   
 
     public void Move(float move, bool jump)
     {
-     
+        if (move > 0 || move < 0)
+        {
+            animPlayer.SetBool("isMoving", true);
+        }
+        else
+        {
+            animPlayer.SetBool("isMoving", false);
+        }
         //only control the player if grounded or airControl is turned on
         if (grounded || airControl)
         {
+          
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
             // And then smoothing it out and applying it to the character
@@ -95,9 +123,13 @@ public class CharacterController2D : MonoBehaviour
             // Add a vertical force to the player.
             grounded = false;
             rb2D.AddForce(new Vector2(0f, jumpForce));
+            animPlayer.SetBool("isGrounded", false);
+            animPlayer.SetTrigger("Jump");
+            
         }
+ 
     }
-
+  
 
     private void Flip()
     {
