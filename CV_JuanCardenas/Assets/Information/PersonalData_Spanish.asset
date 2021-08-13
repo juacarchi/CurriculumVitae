@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fc490efd0c4b94c8926bf61d3e3223, type: 3}
+  m_Name: PersonalData_Spanish
+  m_EditorClassIdentifier: 
+  idioma: Spanish
+  title: DATOS PERSONALES
+  textContact: "JUAN C\xC1RDENAS\nPROGRAMADOR UNITY"
+  textContact2: '+34 664 03 02 28
+
+    jcardenas.developer@gmail.com
+
+    @jCardenas.developer'
+  personalCompetences: "\xB7 Resoluci\xF3n de problemas\n\n\xB7 Flexibilidad y adaptabilidad\n\n\xB7
+    Trabajo en equipo\n\n\xB7 Productividad y motivaci\xF3n\r\n\n\xB7 Responsabilidad\r\n\n\xB7
+    Iniciativa e implicaci\xF3n\n\n\xB7 Pasion por hacer videojuegos\r"
+  personalCompetences2: 'COMPETENCIAS
+
+    PERSONALES'
+  textSpain: Nativo
+  textEnglish: B2
+  textOthers: "\xB7 Flexibilidad horaria\n\n\xB7 Carnet de conducir \n\n\xB7 Alta
+    en Garant\xEDa Juvenil\n"

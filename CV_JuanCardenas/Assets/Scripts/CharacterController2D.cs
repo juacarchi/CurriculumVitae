@@ -63,7 +63,16 @@ public class CharacterController2D : MonoBehaviour
                 activeCube = true;
                 Debug.Log(hit.collider.name);
                 GameObject cubePush = hit.collider.gameObject;
-                cubePush.GetComponent<DisplayInfo>().ShowMessage();
+                if (cubePush.GetComponent<ChangeLanguage>())
+                {
+                    cubePush.GetComponent<ChangeLanguage>().SetLanguage();
+                }
+                else
+                {
+                    DisplayInfo.instance.ShowMessage(cubePush.tag);
+                }
+                    
+                
             }
         }
         
