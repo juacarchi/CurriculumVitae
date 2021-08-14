@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject[] tuberias;
     public static GameManager instance;
+    int actualTuberia;
     int language; // 0 Españo ; 1 ingles;
     private void Awake()
     {
@@ -37,4 +40,11 @@ public class GameManager : MonoBehaviour
         return language;
     }
 
+    public void ActiveTuberia()
+    {
+        actualTuberia++;
+        Vector2 posTuberiaSiguiente = tuberias[actualTuberia].transform.position;
+        player.transform.position = posTuberiaSiguiente;
+        actualTuberia++;
+    }
 }

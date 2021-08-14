@@ -3,10 +3,12 @@ using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
     [SerializeField] float jumpForce = 400f;                          // Amount of force added when the player jumps.
+    [SerializeField] float jumpExtraForce;
     [Range(0, .3f)] [SerializeField] float movementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] bool airControl = false;                         // Whether or not a player can steer while jumping;
     [SerializeField] LayerMask whatIsGround;                          // A mask determining what is ground to the character
     [SerializeField] LayerMask whatIsCube;
+    [SerializeField] LayerMask whatIsJumper;
     [SerializeField] Transform groundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] Transform ceilingCheck;                          // A position marking where to check for ceilings
 
@@ -15,6 +17,8 @@ public class CharacterController2D : MonoBehaviour
     bool grounded;  // Whether or not the player is grounded.
     bool isJumping;
     bool activeCube;
+    [HideInInspector] public bool canJump;
+
     const float ceilingRadius = 0.2f; // Radius of the overlap circle to determine if the player can stand up
     Rigidbody2D rb2D;
     bool facingRight = true;  // For determining which way the player is currently facing.
@@ -27,12 +31,12 @@ public class CharacterController2D : MonoBehaviour
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
-    
+
 
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        animPlayer=this.GetComponent<Animator>();
+        animPlayer = this.GetComponent<Animator>();
         //Crear evento de aterrizaje (nos ayudará a la hora de sincronizar la animación)
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
@@ -40,19 +44,32 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool canJumpHere = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.2f, whatIsJumper);
         Debug.DrawRay(new Vector2(groundCheck.position.x - 0.07f, groundCheck.position.y), -Vector2.up);
-        bool left = Physics2D.Raycast(new Vector2(groundCheck.position.x - 0.07f,groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
+        bool left = Physics2D.Raycast(new Vector2(groundCheck.position.x - 0.07f, groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
         bool center = Physics2D.Raycast(groundCheck.position, -Vector2.up, 0.2f, whatIsGround);
         bool right = Physics2D.Raycast(new Vector2(groundCheck.position.x + 0.07f, groundCheck.position.y), -Vector2.up, 0.2f, whatIsGround);
-
-        if (left||center||right)
+        if (canJumpHere)
         {
+            canJump = false;
+            grounded = true;
+        }
+
+
+
+        if (left || center || right)
+        {
+            canJump = true;
             grounded = true;
             activeCube = false;
         }
         else
         {
-            grounded = false;
+            if (!canJumpHere)
+            {
+                grounded = false;
+            }
+
         }
         if (!grounded)
         {
@@ -63,19 +80,21 @@ public class CharacterController2D : MonoBehaviour
                 activeCube = true;
                 Debug.Log(hit.collider.name);
                 GameObject cubePush = hit.collider.gameObject;
+
                 if (cubePush.GetComponent<ChangeLanguage>())
                 {
                     cubePush.GetComponent<ChangeLanguage>().SetLanguage();
                 }
                 else
                 {
+                    cubePush.GetComponent<Animator>().SetTrigger("Push");
                     DisplayInfo.instance.ShowMessage(cubePush.tag);
                 }
-                    
-                
+
+
             }
         }
-        
+
         if (!grounded && rb2D.velocity.y < 0)
         {
             Debug.Log("Esta cayendo");
@@ -83,18 +102,19 @@ public class CharacterController2D : MonoBehaviour
             if (checkFloor)
             {
                 animPlayer.SetBool("isGrounded", true);
+                canJump = true;
             }
         }
 
         if (grounded)
         {
-            if(rb2D.velocity.y == 0)
+            if (rb2D.velocity.y == 0)
             {
                 animPlayer.SetBool("isGrounded", true);
             }
         }
     }
-   
+
 
     public void Move(float move, bool jump)
     {
@@ -107,9 +127,9 @@ public class CharacterController2D : MonoBehaviour
             animPlayer.SetBool("isMoving", false);
         }
         //only control the player if grounded or airControl is turned on
-        if (grounded || airControl)
+        if (grounded || airControl && canJump)
         {
-          
+
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
             // And then smoothing it out and applying it to the character
@@ -122,7 +142,7 @@ public class CharacterController2D : MonoBehaviour
             }
             else if (move < 0 && facingRight)
             {
-                
+
                 Flip();
             }
         }
@@ -130,15 +150,26 @@ public class CharacterController2D : MonoBehaviour
         if (grounded && jump)
         {
             // Add a vertical force to the player.
+            airControl = true;
             grounded = false;
             rb2D.AddForce(new Vector2(0f, jumpForce));
             animPlayer.SetBool("isGrounded", false);
             animPlayer.SetTrigger("Jump");
-            
+
         }
- 
+
     }
-  
+
+    public void ExtraJump()
+    {
+        canJump = false;
+        rb2D.velocity = Vector2.zero;
+        airControl = false;
+        grounded = false;
+        rb2D.AddForce(new Vector2(80f, jumpExtraForce));
+        animPlayer.SetBool("isGrounded", false);
+        animPlayer.SetTrigger("Jump");
+    }
 
     private void Flip()
     {

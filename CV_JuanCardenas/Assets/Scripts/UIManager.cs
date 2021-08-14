@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public SpriteRenderer btn_english;
+    public SpriteRenderer btn_spanish;
+
     GameObject panelActive;
     public static UIManager instance;
     private void Awake()

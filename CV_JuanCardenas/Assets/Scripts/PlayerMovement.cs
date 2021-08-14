@@ -10,18 +10,21 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     public float runSpeed = 40f;
     
-
+    
     bool jump = false;
     bool sprint = false;
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetButtonDown("Jump"))
+        if (controller.canJump)
         {
-            jump = true;
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+            }
         }
+        
 
         if (Input.GetButtonDown("Shift"))
         {

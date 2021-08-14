@@ -5,6 +5,7 @@ public class DisplayInfo : MonoBehaviour
     public static DisplayInfo instance;
     public GameObject panelDP;
     public GameObject panelFO;
+
     private void Awake()
     {
         if (instance == null)

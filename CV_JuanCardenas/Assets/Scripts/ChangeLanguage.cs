@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChangeLanguage : MonoBehaviour
 {
@@ -10,11 +8,28 @@ public class ChangeLanguage : MonoBehaviour
     {
         if (spanish)
         {
-            GameManager.instance.SetLanguage(0);
+            if (GameManager.instance.GetLanguage() != 0)
+            {
+                GameManager.instance.SetLanguage(0);
+                Sprite spriteSpanish = UIManager.instance.btn_spanish.sprite;
+                Sprite spriteEnglish = UIManager.instance.btn_english.sprite;
+                UIManager.instance.btn_spanish.sprite = spriteEnglish;
+                UIManager.instance.btn_english.sprite = spriteSpanish;
+            }
+
+
         }
         else if (english)
         {
-            GameManager.instance.SetLanguage(1);
+            if (GameManager.instance.GetLanguage() != 1)
+            {
+                GameManager.instance.SetLanguage(1);
+                Sprite spriteSpanish = UIManager.instance.btn_spanish.sprite;
+                Sprite spriteEnglish = UIManager.instance.btn_english.sprite;
+                UIManager.instance.btn_spanish.sprite = spriteEnglish;
+                UIManager.instance.btn_english.sprite = spriteSpanish;
+            }
+                
         }
     }
 }
