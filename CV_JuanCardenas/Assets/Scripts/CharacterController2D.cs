@@ -166,7 +166,7 @@ public class CharacterController2D : MonoBehaviour
         rb2D.velocity = Vector2.zero;
         airControl = false;
         grounded = false;
-        rb2D.AddForce(new Vector2(80f, jumpExtraForce));
+        rb2D.AddForce(new Vector2(150f, jumpExtraForce));
         animPlayer.SetBool("isGrounded", false);
         animPlayer.SetTrigger("Jump");
     }

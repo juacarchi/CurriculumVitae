@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DP
   - FO
+  - EX
+  - CO
   layers:
   - Default
   - TransparentFX
