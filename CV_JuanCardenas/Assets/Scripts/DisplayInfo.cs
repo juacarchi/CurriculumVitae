@@ -5,7 +5,8 @@ public class DisplayInfo : MonoBehaviour
     public static DisplayInfo instance;
     public GameObject panelDP;
     public GameObject panelFO;
-
+    public GameObject panelCO;
+    public GameObject panelEX;
     private void Awake()
     {
         if (instance == null)
@@ -29,6 +30,16 @@ public class DisplayInfo : MonoBehaviour
         {
             panelFO.SetActive(true);
             UIManager.instance.SetPanelActive(panelFO);
+        }
+        else if (panel == "CO")
+        {
+            panelCO.SetActive(true);
+            UIManager.instance.SetPanelActive(panelCO);
+        }
+        else if (panel == "EX")
+        {
+            panelEX.SetActive(true);
+            UIManager.instance.SetPanelActive(panelEX);
         }
         
         var foundTexts = Resources.FindObjectsOfTypeAll<LanguageText>();
