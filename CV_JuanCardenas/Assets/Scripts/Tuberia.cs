@@ -8,7 +8,7 @@ public class Tuberia : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.instance.ActiveTuberia();
+            TransitionManager.instance.AnimateTransition();
         }
     }
 }
