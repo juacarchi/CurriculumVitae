@@ -28,5 +28,6 @@ public class UIManager : MonoBehaviour
  public void ClosePanel()
     {
         panelActive.SetActive(false);
+        GameManager.instance.SetCanMove(true);
     }
 }

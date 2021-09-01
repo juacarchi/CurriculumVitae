@@ -87,8 +87,13 @@ public class CharacterController2D : MonoBehaviour
                 }
                 else
                 {
-                    cubePush.GetComponent<Animator>().SetTrigger("Push");
+                    if (cubePush.GetComponent<Animator>() != null)
+                    {
+                        cubePush.GetComponent<Animator>().SetTrigger("Push");
+                    }
+                    
                     DisplayInfo.instance.ShowMessage(cubePush.tag);
+                    GameManager.instance.SetCanMove(false);
                 }
 
 

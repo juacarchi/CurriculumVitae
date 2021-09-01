@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     int actualTuberia;
     int language; // 0 Españo ; 1 ingles;
+    bool canMove;
+
+    
+
     private void Awake()
     {
         if (instance == null)
@@ -46,5 +50,13 @@ public class GameManager : MonoBehaviour
         Vector2 posTuberiaSiguiente = tuberias[actualTuberia].transform.position;
         player.transform.position = posTuberiaSiguiente;
         actualTuberia++;
+    }
+    public bool GetCanMove()
+    {
+        return canMove;
+    }
+    public void SetCanMove(bool canMove)
+    {
+        this.canMove = canMove;
     }
 }
