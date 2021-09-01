@@ -7,6 +7,7 @@ public class DisplayInfo : MonoBehaviour
     public GameObject panelFO;
     public GameObject panelCO;
     public GameObject panelEX;
+    string urlPortfolio = "https://github.com/juacarchi/Portafolio";
     private void Awake()
     {
         if (instance == null)
@@ -40,6 +41,11 @@ public class DisplayInfo : MonoBehaviour
         {
             panelEX.SetActive(true);
             UIManager.instance.SetPanelActive(panelEX);
+        }
+        else if (panel == "PO")
+        {
+            Application.OpenURL(urlPortfolio);
+            Debug.Log("Abre URL");
         }
         
         var foundTexts = Resources.FindObjectsOfTypeAll<LanguageText>();

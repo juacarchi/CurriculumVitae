@@ -1057,9 +1057,10 @@ GameObject:
   m_Component:
   - component: {fileID: 160512659}
   - component: {fileID: 160512658}
+  - component: {fileID: 160512660}
   m_Layer: 0
-  m_Name: SpritesMario_62
-  m_TagString: Untagged
+  m_Name: CubePortfolio
+  m_TagString: PO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1128,6 +1129,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &160512660
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160512657}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.2, y: 0.2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!1 &188489708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,8 +1289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -187.2, y: 1.9}
-  m_SizeDelta: {x: 352.84888, y: 156.19}
+  m_AnchoredPosition: {x: -176.2, y: 1.9}
+  m_SizeDelta: {x: 330.83392, y: 156.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193767862
 MonoBehaviour:
@@ -1277,8 +1304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: "\xB7 Control de versiones en GitHub\n\xB7 PROGRAMACI\xD3N ORIENTADA
+    A OBJETOS\n\xB7 Empaquetado en Android, iOS y WebGL\n\xB7 Funcionamiento comunidad
+    Agile\n\xB7 HACER C\xD3DIGOS LIMPIOS Y ESCALABLES"
+  englishText: "\xB7 VERSION CONTROL (GITHUB)\n\xB7 OBJECT-ORIENTED PROGRAMMING \n\xB7
+    ANDROID, IOS AND WEBGL DISTRIBUTION \n\xB7 AGILE COMMUNITY OPERATION\n\xB7 WRITE
+    CLEAN AND SCALABLE CODE"
 --- !u!114 &193767863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,7 +1331,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bafde1cced46fa48acbf9d6c34ced12, type: 3}
-    m_FontSize: 20
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1311,9 +1342,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: "\xB7 Control de versiones en GitHub\n\xB7 Conocimiento de modelado, animaci\xF3n,
-    dise\xF1o gr\xE1fico y rigging\n\xB7 Empaquetado en Android, iOS y WebGL\n\xB7
-    Funcionamiento comunidad Agile"
+  m_Text: "\xB7 Control de versiones en GitHub\n\xB7 PROGRAMACI\xD3N ORIENTADA A
+    OBJETOS\n\xB7 Empaquetado en Android, iOS y WebGL\n\xB7 Funcionamiento comunidad
+    Agile\n\xB7 HACER C\xD3DIGOS LIMPIOS Y ESCALABLES"
 --- !u!222 &193767864
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1649,8 +1680,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.947702, y: -1.2}
-  m_SizeDelta: {x: 179.45636, y: 104.71896}
+  m_AnchoredPosition: {x: 2.2, y: -1.2}
+  m_SizeDelta: {x: 167.89505, y: 104.71896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &251159219
 MonoBehaviour:
@@ -1760,8 +1791,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: "\xB7 ORGANIZACI\xD3N DE TIEMPO CON FECHAS L\xCDMITES\n\xB7 Conocimiento
+    de modelado, animaci\xF3n, dise\xF1o gr\xE1fico y rigging\n\xB7 HABILIDAD DE
+    TRABAJAR BAJO PRESI\xD3N\n\xB7 FLEXIBILIDAD Y ADAPTACI\xD3N AL CAMBIO"
+  englishText: "\xB7 ABILITY TO MANAGE TIME  AND WORK WITHIN DEADLINES\n\xB7 KNOWLEDGE
+    MODELLING, ANIMATION, GRAPHIC DESIGN AND RIGGING\n\xB7 ABILITY TO WORK UNDER
+    PRESSURE\n\xB7 FLEXIBILITY AND ABILITY TO ADAPT TO CHANGE"
 --- !u!114 &282379549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,10 +1818,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bafde1cced46fa48acbf9d6c34ced12, type: 3}
-    m_FontSize: 20
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1794,9 +1829,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: "\xB7 Control de versiones en GitHub\n\xB7 Conocimiento de modelado, animaci\xF3n,
-    dise\xF1o gr\xE1fico y rigging\n\xB7 Empaquetado en Android, iOS y WebGL\n\xB7
-    Funcionamiento comunidad Agile"
+  m_Text: "\xB7 ORGANIZACI\xD3N DE TIEMPO CON FECHAS L\xCDMITES\n\xB7 Conocimiento
+    de modelado, animaci\xF3n, dise\xF1o gr\xE1fico y rigging\n\xB7 HABILIDAD DE
+    TRABAJAR BAJO PRESI\xD3N\n\xB7 FLEXIBILIDAD Y ADAPTACI\xD3N AL CAMBIO"
 --- !u!222 &282379550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2818,7 +2853,7 @@ GameObject:
   - component: {fileID: 527009611}
   - component: {fileID: 527009610}
   m_Layer: 5
-  m_Name: Formacion1 (1)
+  m_Name: Unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3412,7 +3447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3, y: -54.45}
+  m_AnchoredPosition: {x: -0.3, y: -76.5}
   m_SizeDelta: {x: 345.15808, y: 260.30634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647004913
@@ -3427,8 +3462,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: "EXPERIENCIA TRABAJANDO EN UNA COMUNIDAD AGILE\n\nDESARROLLO DE 5
+    PROTOTIPOS PARA M\xD3VIL, SUBIDA A PLAYSTORE (ANDROID) Y APPSTORE (IOS)\n\nREALIZACI\xD3N
+    DE C\xD3DIGOS LIMPIOS Y ESCALABLES\n\nUSO Y MANEJO DE CONTROL DE VERSIONES (GITHUB)\n\nDISTRIBUCI\xD3N
+    DEL TIEMPO PARA LLEGAR A LAS FECHAS DE ENTREGA EFICIENTEMENTE"
+  englishText: 'EXPERIENCE WORKING IN AN AGILE COMMUNITY
+
+
+    DEVELOPMENT OF 5 PROTOTYPES
+    FOR MOBILE, UPLOADING TO PLAYSTORE (ANDROID) AND APPSTORE (IOS)
+
+
+    CLEAN AND
+    SCALABLES CODES
+
+
+    HANDLING OF VERSION CONTROL (GITHUB)
+
+
+    DISTRIBUTION
+    OF TIME TO REACH DELIVERY DATES EFFICIENTLY'
 --- !u!114 &647004914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3442,7 +3495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3450,7 +3503,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bafde1cced46fa48acbf9d6c34ced12, type: 3}
-    m_FontSize: 15
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3461,9 +3514,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Matr\xEDcula de honor de mi promoci\xF3n.\n\nDesarrollo de multitud de
-    videojuegos durante la formaci\xF3n, tanto individualmente como en grupo.\n\nParticip\xE9
-    en el desarrollo del videojuego \"Heroes of the Pandemic\"."
+  m_Text: "EXPERIENCIA TRABAJANDO EN UNA COMUNIDAD AGILE\n\nDESARROLLO DE 5 PROTOTIPOS
+    PARA M\xD3VIL, SUBIDA A PLAYSTORE (ANDROID) Y APPSTORE (IOS)\n\nREALIZACI\xD3N
+    DE C\xD3DIGOS LIMPIOS Y ESCALABLES\n\nUSO Y MANEJO DE CONTROL DE VERSIONES (GITHUB)\n\nDISTRIBUCI\xD3N
+    DEL TIEMPO PARA LLEGAR A LAS FECHAS DE ENTREGA EFICIENTEMENTE"
 --- !u!222 &647004915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3484,7 +3538,7 @@ GameObject:
   - component: {fileID: 657328480}
   - component: {fileID: 657328479}
   m_Layer: 5
-  m_Name: Formacion1 (3)
+  m_Name: Blender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4383,7 +4437,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bafde1cced46fa48acbf9d6c34ced12, type: 3}
     m_FontSize: 13
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -5727,7 +5781,7 @@ GameObject:
   - component: {fileID: 1054410450}
   - component: {fileID: 1054410449}
   m_Layer: 5
-  m_Name: Formacion1 (2)
+  m_Name: Adobe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6604,8 +6658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: ESTUDIOS
-  englishText: DO IT
+  spanishText: EXPERIENCIA
+  englishText: EXPERIENCE
 --- !u!114 &1158758534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6781,7 +6835,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bafde1cced46fa48acbf9d6c34ced12, type: 3}
     m_FontSize: 13
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -7521,7 +7575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.4, y: -52.8}
+  m_AnchoredPosition: {x: -0.4, y: -70.9}
   m_SizeDelta: {x: 349.31287, y: 251.05217}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390257017
@@ -7536,8 +7590,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: "Experiencia trabajando en metodolog\xEDas cooperativas, donde el
+    trabajo en equipo era prioritario\n\nGran capacidad para resolver conflictos\n\nConocimientos
+    en psicolog\xEDa infantil\n\nAtenci\xF3n al detalle"
+  englishText: 'EXPERIENCE WORKING IN COOPERATIVE METHODOLOGIES, WHERE TEAMWORK WAS
+    A PRIORITY
+
+
+    GREAT ABILITY TO RESOLVE CONFLICTS
+
+
+    KNOWLEDGE IN CHILD
+    PSYCHOLOGY
+
+
+    ATTENTION TO DETAIL'
 --- !u!114 &1390257018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7559,7 +7626,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bafde1cced46fa48acbf9d6c34ced12, type: 3}
-    m_FontSize: 15
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -7572,7 +7639,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Experiencia trabajando en metodolog\xEDas cooperativas, donde el trabajo
     en equipo era prioritario\n\nGran capacidad para resolver conflictos\n\nConocimientos
-    en psicolog\xEDa infantil"
+    en psicolog\xEDa infantil\n\nAtenci\xF3n al detalle"
 --- !u!222 &1390257019
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7756,8 +7823,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: 'OPENCIENCIAS S.L
+
+    (FEBRERO 2018 - JUNIO 2018)'
+  englishText: 'OPENCIENCIAS S.L
+
+    (FEBRUARY 2018 - JUNE 2018)'
 --- !u!114 &1412119475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7790,9 +7861,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'UNIVERSIDAD DE SEVILLA
+  m_Text: 'OPENCIENCIAS S.L
 
-    2014 - 2018'
+    (FEBRERO 2018 - JUNIO 2018)'
 --- !u!222 &1412119476
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8746,8 +8817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: "PROFESOR ACOMPA\xD1AMIENTO ESCOLAR"
+  englishText: SCHOOL ACCOMPANIMENT TEACHER
 --- !u!114 &1628222835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8780,7 +8851,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Grado Universitario en Educaci\xF3n Primaria"
+  m_Text: "PROFESOR ACOMPA\xD1AMIENTO ESCOLAR"
 --- !u!222 &1628222836
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8966,8 +9037,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: ESTUDIOS
-  englishText: DO IT
+  spanishText: CONOCIMIENTOS
+  englishText: SKILLS
 --- !u!114 &1723827845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9144,8 +9215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: programador unity
+  englishText: unity programmer
 --- !u!114 &1770361394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9178,7 +9249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "T\xE9cnico Superior en Animaciones 3D, Juegos y Entornos Interactivos."
+  m_Text: programador unity
 --- !u!222 &1770361395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9529,7 +9600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1842686330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9896,8 +9967,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4ab99a0fbd9044088f1ca61712d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spanishText: "T\xE9cnico Superior en Animaciones 3D"
-  englishText: 
+  spanishText: 'IQUICK (FCT GRADO SUPERIOR)
+
+    MARZO 2021 - JUNIO 2021'
+  englishText: 'IQUICK
+
+    MARCH 2021 - JUNE 2021'
 --- !u!114 &1896782074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9930,9 +10005,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'NUEVAS PROFESIONES
+  m_Text: 'IQUICK (FCT GRADO SUPERIOR)
 
-    2019 - 2021'
+    MARZO 2021 - JUNIO 2021'
 --- !u!222 &1896782075
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10126,7 +10201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1900862388
 RectTransform:
   m_ObjectHideFlags: 0
