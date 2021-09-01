@@ -9,6 +9,7 @@ public class Tuberia : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             TransitionManager.instance.AnimateTransition();
+            SFXManager.instance.PlaySFX(SFXManager.instance.changeScene);
         }
     }
 }

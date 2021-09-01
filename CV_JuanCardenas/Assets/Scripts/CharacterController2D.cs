@@ -80,6 +80,7 @@ public class CharacterController2D : MonoBehaviour
                 activeCube = true;
                 Debug.Log(hit.collider.name);
                 GameObject cubePush = hit.collider.gameObject;
+                SFXManager.instance.PlaySFX(SFXManager.instance.activeCube);
 
                 if (cubePush.GetComponent<ChangeLanguage>())
                 {
